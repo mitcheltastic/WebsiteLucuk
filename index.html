@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanya Syasya!!!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #ffccdf;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
             margin: 0;
             display: flex;
@@ -73,6 +74,26 @@
             }
             50% {
                 transform: scale(1.1);
+            }
+        }
+
+        /* Responsiveness */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            button {
+                font-size: 1em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+                margin: 5px;
+            }
+            button {
+                font-size: 0.9em;
             }
         }
     </style>
