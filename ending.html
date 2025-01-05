@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ending</title>
+    <style>
+        body {
+            background-color: #ffccdf;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            color: #fff;
+            margin: 10px;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        #image-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .image-slider {
+            display: flex;
+            gap: 10px;
+            animation: moveImages 60s linear infinite;
+        }
+
+        .image-frame {
+            flex: 0 0 auto;
+            width: 300px;
+            height: 300px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Animasi gambar bergerak */
+        @keyframes moveImages {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Responsiveness for small screens */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            #image-container {
+                height: 200px; /* Smaller image container */
+            }
+
+            .image-frame {
+                width: 250px; /* Reduce image size */
+                height: 200px; /* Reduce image size */
+            }
+
+            .image-slider {
+                animation: moveImages 40s linear infinite; /* Speed up animation on smaller screens */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+                margin: 5px;
+            }
+
+            #image-container {
+                height: 150px; /* Further reduce image container height */
+            }
+
+            .image-frame {
+                width: 200px; /* Further reduce image size */
+                height: 150px; /* Further reduce image size */
+            }
+
+            .image-slider {
+                animation: moveImages 60s linear infinite; /* Speed up animation on very small screens */
+            }
+        }
+
+        /* Pause button style */
+        #pause-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 20px;
+            background-color: #ff4d94;
+            color: white;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        #pause-btn:hover {
+            background-color: #e62e7e;
+        }
+
+        /* "Made by Mici" text style */
+        #footer-text {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 1.5em;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Play Again button style */
+        #play-again-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 25px;
+            background-color: #7ed957;
+            color: white;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #play-again-btn:hover {
+            background-color: #6cc84a;
+        }
+    </style>
+</head>
+<body>
+    <h1>AAAAKKK DENGAN SENANG HATII AKU JUGA MAU! 💖</h1>
+    <h1>I LOVE YOU AYANGGIEEE! 💖💖💖</h1>
+    
+    <!-- Pause Button -->
+    <button id="pause-btn">Pause Music</button>
+
+    <div id="image-container">
+        <div class="image-slider">
+            <!-- Semua gambar -->
+            <div class="image-frame"><img src="libs/MeAndAyang.jpg" alt="Image 1"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang2.jpg" alt="Image 2"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang3.jpg" alt="Image 3"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang4.jpg" alt="Image 4"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang5.jpg" alt="Image 5"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang6.jpg" alt="Image 6"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang7.jpg" alt="Image 7"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang8.jpg" alt="Image 8"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang9.jpg" alt="Image 9"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang10.jpg" alt="Image 10"></div>
+
+            <!-- Duplikat seluruh gambar untuk animasi mulus -->
+            <div class="image-frame"><img src="libs/MeAndAyang.jpg" alt="Image 1"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang2.jpg" alt="Image 2"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang3.jpg" alt="Image 3"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang4.jpg" alt="Image 4"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang5.jpg" alt="Image 5"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang6.jpg" alt="Image 6"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang7.jpg" alt="Image 7"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang8.jpg" alt="Image 8"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang9.jpg" alt="Image 9"></div>
+            <div class="image-frame"><img src="libs/MeAndAyang10.jpg" alt="Image 10"></div>
+        </div>
+    </div>
+
+    <audio id="song" src="libs/MiciSyasya.mp3" autoplay loop></audio>
+
+    <!-- "Made by Mici" footer text -->
+    <div id="footer-text">Made by Mici</div>
+
+    <!-- Play Again Button -->
+    <button id="play-again-btn" onclick="window.location.href='/'">Play Again</button>
+
+    <script>
+        // Pause button functionality
+        const pauseBtn = document.getElementById('pause-btn');
+        const song = document.getElementById('song');
+
+        pauseBtn.addEventListener('click', () => {
+            if (song.paused) {
+                song.play();
+                pauseBtn.textContent = 'Pause Music';
+            } else {
+                song.pause();
+                pauseBtn.textContent = 'Play Music';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spend Life Together</title>
+    <style>
+        body {
+            background-color: #ffccdf;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #fff;
+            margin: 20px;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: pulse 1.5s infinite;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            width: 100%;
+        }
+
+        button {
+            font-size: 1.2em;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.2);
+        }
+
+        #yes-btn {
+            background-color: #7ed957;
+            color: #fff;
+        }
+
+        #yes-btn:hover {
+            background-color: #6cc84a;
+        }
+
+        #no-btn {
+            background-color: #ff6f6f;
+            color: #fff;
+            transition: transform 0.5s ease, left 0.5s ease, top 0.5s ease;
+        }
+
+        #no-btn:hover {
+            background-color: #e65d5d;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="question">Ayaang sayang ga sama akuu??</h1>
+    <div class="buttons">
+        <button id="yes-btn">Yes</button>
+        <button id="no-btn">No</button>
+    </div>
+
+    <audio id="yes-sound" src="libs/pop.mp3"></audio>
+    <audio id="no-sound" src="libs/pop.mp3"></audio>
+
+    <script>
+        const yesButton = document.getElementById('yes-btn');
+        const noButton = document.getElementById('no-btn');
+        const yesSound = document.getElementById('yes-sound');
+        const noSound = document.getElementById('no-sound');
+        const questionElement = document.getElementById('question');
+        const questions = [
+            "Ayaang sayang ga sama akuu??",
+            "Yakinnn???",
+            "Yang Benerrr???",
+            "Kalo gitu.. Menua Bersama yukkk💖"
+        ];
+        let currentQuestionIndex = 0;
+        let isMoved = false;
+
+        // Ketika tombol Yes ditekan
+        yesButton.addEventListener('click', () => {
+            yesSound.play();
+
+            // Pindahkan ke pertanyaan berikutnya jika belum mencapai yang terakhir
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                questionElement.textContent = questions[currentQuestionIndex];
+            } else {
+                // Jika sudah di pertanyaan terakhir, langsung arahkan ke ending.html
+                window.location.href = "/ending.html"; // Arahkan langsung tanpa delay
+            }
+        });
+
+        // Ketika tombol No ditekan
+        noButton.addEventListener('click', () => {
+            if (!isMoved) {
+                noButton.style.position = 'absolute';
+                isMoved = true;
+            }
+            noSound.play();
+            moveNoButton();
+        });
+
+        function moveNoButton() {
+            const containerRect = document.body.getBoundingClientRect();
+            const x = Math.random() * (containerRect.width - noButton.offsetWidth);
+            const y = Math.random() * (containerRect.height - noButton.offsetHeight);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
